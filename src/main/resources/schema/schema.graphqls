@@ -1,0 +1,33 @@
+scalar CountryCode
+
+type Query {
+    clients: [Client]
+}
+
+type Mutation {
+    addClient(client: ClientInput) : Client
+    deleteClient(clientId: Int, accountId: Int) : Boolean
+}
+
+type Account @key(fields: "accountId") @extends {
+    accountId: ID
+    client: [Client]
+}
+
+type Client {
+    clientId: ID
+    accountId: Int
+    firstName: String!
+    middleName: String
+    lastName: String
+    country: CountryCode
+}
+
+input ClientInput {
+    clientId: ID
+    accountId: Int
+    firstName: String
+    middleName: String
+    lastName: String
+    country: CountryCode
+}
