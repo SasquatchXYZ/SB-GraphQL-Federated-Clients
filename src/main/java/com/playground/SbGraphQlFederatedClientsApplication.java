@@ -1,4 +1,4 @@
-package com.playground.SB_GraphQL_Federated_Clients;
+package com.playground;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
